@@ -1,0 +1,66 @@
+.bg-login{
+    min-height: 100%;
+    background-size: 100%;
+    padding: 20px;
+}
+.login-card{
+    background-color: #fff;
+    float: none;
+    margin: auto;
+    box-shadow: 0 1px 15px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
+    margin-top: 8%;
+    margin-bottom: 5%;
+    
+}
+.detail-part{
+    background-image: url(../images/login-bg.jpg);
+    padding: 30px;
+    background-size: 100%;
+}
+.detail-part h1{
+    color: #fff;
+}
+.detail-part p{
+    color: #fff;
+    margin-top: 30px;
+}
+.logn-part{
+    padding: 30px;
+}
+.logo-cover img{
+    margin-bottom: 30px;
+}
+.form-cover h6{
+    margin-bottom: 30px;
+}
+.form-cover input{
+    margin-bottom: 15px;
+    border-radius: 0px;
+    background-color: #cccccc38;
+}
+.form-footer .forget-paswd{
+    text-align: left;
+}
+.button-div{
+    text-align: right;
+}
+.form-footer{
+    margin-bottom: 40px;
+}
+.button-div .btn{
+    background-color: #922c88 !important;
+    border-color: #922c88 !important;
+}
+.button-div .btn:hover{
+    background-color: #922c88 !important;
+    border-color: #922c88 !important;
+}
+.button-div .btn:active{
+    background-color: #922c88 !important;
+    border-color: #922c88 !important;
+}
+.button-div .btn:focus{
+    background-color: #922c88 !important;
+    border-color: #922c88 !important;
+}
+

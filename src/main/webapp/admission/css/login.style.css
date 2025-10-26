@@ -1,0 +1,242 @@
+body {
+  	font-family: "Open Sans", sans-serif;
+  	color: #444444;
+  	font-size: 12px !important;
+  	font-weight: 300;
+  	margin: 0;
+	background: #f2f2f2;
+}
+
+.main-container .container-fluid {
+    padding: 0;
+}
+.top-header {
+    box-shadow: 0 0 15px 0 rgb(2 59 109 / 10%);
+}
+
+.top-header .heading-marquee marquee {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.top-header .heading{background-color:#1171e5;}
+.top-header .logo {
+    background-color:#fff;
+}
+.top-header .heading-marquee {
+    background: #fff;
+    border-bottom: 1px #e8e8e8 solid;
+    overflow: hidden;
+}
+.top-header .heading h2 {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    margin: 0;
+    border-bottom: 1px #0565d9 solid;
+    padding: 10px;
+    font-size: 22px;
+}
+
+.top-header .heading-marquee h3{margin: 0;color: #2c4964;padding: 10px 0;font-size: 13px;}
+.container-main {
+    padding: 30px 0;
+    background: #f2f2f2;
+}
+.container-main .card .card-header {
+    background: #1171e5;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-weight: 500;
+    padding: 8px;
+    text-transform: uppercase;
+}
+
+.container-main .card .card-body a {
+    font-size: 13px;
+    padding-left: 5px;
+    font-weight: normal;
+}
+
+.container-main .card .card-body .admin-card-form {
+    padding: 10px;
+}
+
+.container-main .card .card-body .form-control {
+    border: 1px #b0b0b0 solid;
+    font-size: 12px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.container-main .card {
+    margin-bottom: 20px;
+}
+.container-main .card .card-body .admin-card-form button.btn.btn-primary {
+    width: 100%;
+    border-radius: 0;
+    font-size: 15px;
+    background: #2c4964;
+    border-color: #2c4964;
+}
+
+
+
+
+.container-main .card .card-body p strong {
+    font-weight: 600;
+    color: #2c4964;
+}
+.container-main .card .card-body p {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+
+.container-main .card .card-body .table-col .table thead tr th {
+    font-weight: 700 !important;
+}
+.container-main .card .card-body .table-col .table thead tr th, .container-main .card .card-body .table-col .table tbody tr td {
+    font-size: 13px;
+    color: #2c4964;
+    font-weight: normal;
+}
+
+
+footer .footer-col {
+    padding: 8px;
+    background: #2c4964;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: normal;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#blink1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff0000;
+    transition: 0.5s;
+}
+
+#blink2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff0000;
+    transition: 0.5s;
+}
+
+#blink3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff0000;
+    transition: 0.5s;
+}
+
+#blink4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff0000;
+    transition: 0.5s;
+}
+
+#blink5 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff0000;
+    transition: 0.5s;
+}
+      
+#countDownTimer {
+  	text-align: center;
+  	font-size: 30px;
+  	margin-top: 0px;
+}
+
+/* loading */
+:root {
+  --animation-speed: 2s;
+  --text-color: #424293;
+  --font: sans-serif;
+}
+
+
+@media (min-width: 576px){
+.loading-modal-custom .modal-dialog {
+    max-width: 140px;
+    margin: 18%   auto;
+}}
+
+
+
+.loading-modal-custom .modal-content{height:140px; max-width:140px}
+.loading_Main {
+  /* position: absolute; */
+  /* left: 50%; */
+  /* top: 50%; */
+  /* transform: translate(-50%, -50%); */
+  background: var(--background-color);
+  font-family: var(--font);
+  padding: 10px;
+}
+.loading_container {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  border-radius: 150px;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  border-radius: 150px;
+  border-right: 0.3rem solid #424293;
+  animation: animate var(--animation-speed) linear infinite;
+}
+
+.loading_container h3 {
+  color: var(--text-color);
+  position: absolute;
+  left: 45%;
+  top: 46%;
+  transform: translate(-45%, -45%);
+  font-size: 18px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes click-radio-wave {
+  0% {
+    width: 25px;
+    height: 25px;
+    opacity: 0.35;
+    position: relative;
+  }
+
+  100% {
+    width: 60px;
+    height: 60px;
+    margin-left: -15px;
+    margin-top: -15px;
+    opacity: 0.0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wizard-content-left {
+    height: auto;
+  }
+}

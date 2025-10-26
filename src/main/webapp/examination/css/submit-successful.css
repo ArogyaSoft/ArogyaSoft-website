@@ -1,0 +1,94 @@
+
+.profile-card{
+    padding:15px 25px;
+    background-color: #FAD961;
+	background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+
+    border: 1px solid #E2E2E2;
+    -webkit-border-radius: 5px 20px 5px;
+    -moz-border-radius: 5px 20px 5px;
+    -ms-border-radius: 5px 20px 5px;
+    -o-border-radius: 5px 20px 5px;
+    border-radius: 5px 20px 5px;
+    width: 100%;
+
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+
+	-webkit-box-shadow: -1px 3px 3px rgba(0,0,0,0.8);
+	-moz-box-shadow: -1px 3px 3px rgba(0,0,0,0.8);
+	-ms-box-shadow: -1px 3px 3px rgba(0,0,0,0.8);
+	-o-box-shadow: -1px 3px 3px rgba(0,0,0,0.8);
+	box-shadow: -1px 3px 3px rgba(0,0,0,0.8);
+    margin-top:20px;
+}
+.main-heading{margin-top:20px; text-align:center;}
+
+.main-heading h1 {
+	  text-shadow: 
+	   0 -1px 0 #858585,
+	   0 1px 10px rgba(0,0,0,.6),
+	   0 6px 1px rgba(0,0,0,.1),
+	   0 0 5px rgba(0,0,0,.2),
+	   0 1px 3px rgba(0,0,0,.3),
+	   0 3px 5px rgba(0,0,0,.2),
+	   0 7px 10px rgba(0,0,0,.25),
+	   0 15px 10px rgba(0,0,0,.2),
+	   0 25px 15px rgba(0,0,0,.15);
+	   color:#FFF;
+}
+.panel {
+  margin-bottom:0px;
+}
+
+.submit-successful-box{padding:40px 20px;}
+
+.check{
+	text-align: center;
+	width: 85px;
+	height: 85px;
+	background: #FFF;
+	border-radius: 50%;
+	padding: 10px;
+	line-height: 65px;
+	margin: 0 auto;
+}
+.successful-content {text-align:center;}
+.successful-content  h1{font-size:25px; padding-top:25px; color:#01a601;}
+
+
+.proceed{text-align:center; margin-top:20px;}
+.proceed-btn {
+	background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+    font-size: 16px;
+    font-weight: 600;
+	padding:7px 20px;
+    color: #fff;
+    cursor: pointer;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 7px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+	border:1px solid #07804a
+}
+
+.proceed-btn:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.proceed-btn:focus {
+    outline: none;
+}
