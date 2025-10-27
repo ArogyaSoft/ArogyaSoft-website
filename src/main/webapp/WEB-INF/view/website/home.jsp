@@ -153,9 +153,15 @@
             <div class="collapse navbar-collapse" id="navbarArogya">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="service.jsp">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.jsp">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+                    <!-- Login Button -->
+                    <li class="nav-item">
+                        <a class="btn btn-primary ml-2" href="login.jsp" style="border-radius:50px; padding:5px 20px;">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -214,6 +220,44 @@
             </a>
         </div>
     </header>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <!-- Text Section -->
+          <div class="col-md-6">
+            <h2 class="fw-bold mb-4 text-md-start text-center"
+                style="font-weight: 800; font-size: 2 rem; letter-spacing: 0.5px; color: #212529;">
+              Welcome to <span class="text-primary" style="font-weight: 900;">ArogySoft</span>
+            </h2>
+
+            <p class="text-muted text-justify" style="text-align: justify; line-height: 1.8;">
+              <strong>ArogySoft</strong> is an innovative health management software that helps laboratories and healthcare centers simplify their operations with technology.
+              Our platform is designed to automate <strong>patient registration, lab test management, billing, and reporting</strong> — all from a single dashboard.
+            </p>
+            <p class="text-muted text-justify" style="text-align: justify; line-height: 1.8;">
+              Since its inception, ArogySoft has focused on improving efficiency, ensuring data security, and enhancing patient experience with digital healthcare solutions.
+              Labs can easily manage data, generate accurate reports, and offer patients convenient access to their results online.
+            </p>
+            <p class="text-muted text-justify" style="text-align: justify; line-height: 1.8;">
+              With ArogySoft, you can bring your diagnostic center into the digital era with <strong>cloud-based access, real-time reports,</strong> and a user-friendly interface built for healthcare professionals.
+            </p>
+
+          </div>
+
+          <!-- Image Section -->
+          <div class="col-md-6 text-center mt-4 mt-md-0">
+            <img src="https://cdn.pixabay.com/photo/2016/03/31/19/14/doctor-1295581_1280.png"
+                 alt="Doctor using software"
+                 class="img-fluid rounded-4 shadow-sm"
+                 style="max-height: 400px;">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
 
     <!-- Features Section -->
     <section class="container my-5">
@@ -277,6 +321,50 @@
             </div>
         </div>
     </section>
+
+    <section class="py-5" style="background-color: #f9fafc;">
+        <div class="container text-center">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 text-white shadow-lg"
+                         style="background: linear-gradient(135deg, #6dd5fa, #2980b9); border-radius: 20px;">
+                        <div class="card-body p-4">
+                            <i class="fas fa-quote-left fa-2x mb-3"></i>
+                            <p>"ArogyaSoft has transformed the way we manage lab operations. Reports are instant and accurate!"</p>
+                            <h6 class="mt-3 font-weight-bold">Dr. Meena Sharma</h6>
+                            <small>City Diagnostic Center</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 text-white shadow-lg"
+                         style="background: linear-gradient(135deg, #00c6ff, #0072ff); border-radius: 20px;">
+                        <div class="card-body p-4">
+                            <i class="fas fa-quote-left fa-2x mb-3"></i>
+                            <p>"Our billing and patient tracking became 3x faster. Highly recommended for any healthcare setup."</p>
+                            <h6 class="mt-3 font-weight-bold">Dr. Rajesh Kumar</h6>
+                            <small>HealthPlus Labs</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 text-white shadow-lg"
+                         style="background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 20px;">
+                        <div class="card-body p-4">
+                            <i class="fas fa-quote-left fa-2x mb-3"></i>
+                            <p>"The best part is data security and cloud access — I can manage everything from my mobile!"</p>
+                            <h6 class="mt-3 font-weight-bold">Dr. Neha Patel</h6>
+                            <small>MedCare Diagnostics</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- About Section -->
     <section class="bg-light py-5">

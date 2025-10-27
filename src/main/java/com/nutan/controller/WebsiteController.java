@@ -18,6 +18,18 @@ public class WebsiteController {
         return "/website/service";  // This returns the forgot-password.html page
     }
 
+    @GetMapping("/about-us")
+    public String about(){
+
+        return "/website/about-us";
+    }
+
+    @GetMapping("/contact")
+    public String contact(){
+
+        return "/website/contact";
+    }
+
 
 
     @GetMapping("/forgotPassword")
