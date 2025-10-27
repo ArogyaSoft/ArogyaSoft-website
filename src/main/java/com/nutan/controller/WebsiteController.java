@@ -13,6 +13,11 @@ public class WebsiteController {
         return "/website/home";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "/website/login";
+    }
+
     @GetMapping("/service")
     public String service() {
         return "/website/service";  // This returns the forgot-password.html page

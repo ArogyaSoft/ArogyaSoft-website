@@ -158,7 +158,7 @@
                     <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
                     <!-- Login Button -->
                     <li class="nav-item">
-                        <a class="btn btn-primary ml-2" href="login.jsp" style="border-radius:50px; padding:5px 20px;">
+                        <a class="btn btn-primary ml-2" href="login" style="border-radius:50px; padding:5px 20px;">
                             <i class="fas fa-sign-in-alt"></i> Login
                         </a>
                     </li>
@@ -409,6 +409,19 @@
     <button id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
 
     <!-- Scripts -->
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/68ff28d0a58d54194fd39438/1j8ibesl1';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
