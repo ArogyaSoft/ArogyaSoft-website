@@ -365,6 +365,30 @@
         </div>
     </section>
 
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center section-title">Why Choose ArogyaSoft?</h2>
+        <div class="row mt-4">
+          <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+            <h5>Faster Operations</h5>
+            <p>Automate daily tasks and save time for both patients and staff.</p>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-lock fa-3x text-success mb-3"></i>
+            <h5>Secure Data</h5>
+            <p>We prioritize patient privacy with encrypted storage and access control.</p>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-headset fa-3x text-warning mb-3"></i>
+            <h5>24/7 Support</h5>
+            <p>Our technical team ensures smooth and continuous operation of your lab.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
 
     <!-- About Section -->
     <section class="bg-light py-5">
