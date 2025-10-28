@@ -5,7 +5,6 @@
     </footer>
 
     <!-- Back to Top -->
-    <button id="backToTop" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
 
     <!-- Scripts -->
     <!--Start of Tawk.to Script-->
