@@ -156,11 +156,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center">
-        <div class="container">
-            <p class="mb-0">© 2025 ArogyaSoft. All rights reserved. | <a href="#">www.arogyasoft.com</a></p>
-        </div>
-    </footer>
+     <%@ include file="common-footer.jsp" %>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
