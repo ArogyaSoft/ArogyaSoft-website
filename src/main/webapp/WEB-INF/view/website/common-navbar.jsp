@@ -10,6 +10,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a class="nav-link" href="home">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="service">Features</a></li>
+                 <li class="nav-item"><a class="nav-link" href="career">Career</a></li>
                 <li class="nav-item"><a class="nav-link" href="about-us">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
                 <!-- Login Button -->

@@ -23,6 +23,11 @@ public class WebsiteController {
         return "/website/service";  // This returns the forgot-password.html page
     }
 
+    @GetMapping("/career")
+    public String career() {
+        return "/website/career";  // This returns the forgot-password.html page
+    }
+
     @GetMapping("/about-us")
     public String about(){
 
