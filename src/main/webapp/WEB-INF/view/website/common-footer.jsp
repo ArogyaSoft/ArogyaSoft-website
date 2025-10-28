@@ -59,7 +59,7 @@
           <ul class="list-unstyled">
             <li><a href="#" class="text-secondary text-decoration-none"><i class="fab fa-facebook mr-2"></i>Facebook</a></li>
             <li><a href="#" class="text-secondary text-decoration-none"><i class="fab fa-twitter mr-2"></i>Twitter</a></li>
-            <li><a href="#" class="text-secondary text-decoration-none"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/company/arogyasoft" class="text-secondary text-decoration-none"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></li>
             <li><a href="#" class="text-secondary text-decoration-none"><i class="fab fa-instagram mr-2"></i>Instagram</a></li>
           </ul>
         </div>
