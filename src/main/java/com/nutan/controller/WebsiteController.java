@@ -40,6 +40,12 @@ public class WebsiteController {
         return "/website/contact";
     }
 
+    @GetMapping("/faq")
+    public String faq(){
+
+        return "/website/faq";
+    }
+
 
 
     @GetMapping("/forgotPassword")

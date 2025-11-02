@@ -242,8 +242,8 @@
             <div class="col-lg-3 col-md-6 footer-col mb-4">
                 <h6 class="footer-title">Resources</h6>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Pricing</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                    <li><a href="faq"><i class="fas fa-chevron-right"></i> FAQs</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Documentation</a></li>
                 </ul>
