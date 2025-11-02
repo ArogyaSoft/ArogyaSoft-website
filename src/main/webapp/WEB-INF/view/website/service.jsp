@@ -24,9 +24,10 @@
             color: #2c3e50;
         }
 
+        /* Navbar */
         .navbar {
             background: #ffffff;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
 
         .navbar-brand img {
@@ -36,10 +37,52 @@
         .nav-link {
             color: #2c3e50 !important;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .nav-link:hover {
             color: #1abc9c !important;
+        }
+
+        /* Header Section */
+        .career-header {
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: #fff;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(22, 160, 133, 0.2);
+            animation: gradientMove 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes gradientMove {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.6; }
+        }
+
+        .career-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .career-header p {
+            font-size: 1.1rem;
+            margin-top: 15px;
+            color: #ecf0f1;
+            position: relative;
+            z-index: 2;
         }
 
         /* Section Title */
@@ -67,12 +110,12 @@
             padding: 80px 0;
         }
 
-        /* Equal-height Feature Cards */
+        /* Feature Cards */
         .feature-card {
             background: #fff;
             border-radius: 20px;
             transition: all 0.4s ease;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -81,7 +124,7 @@
 
         .feature-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
         .feature-icon {
@@ -111,14 +154,25 @@
             background-color: #2c3e50;
             color: #ecf0f1;
             padding: 30px 0;
+            text-align: center;
         }
 
         .footer a {
             color: #1abc9c;
+            transition: color 0.3s ease;
         }
 
         .footer a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .career-header {
+                padding: 70px 0;
+            }
+            .career-header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
@@ -126,6 +180,14 @@
 
     <!-- Navbar -->
     <%@ include file="common-navbar.jsp" %>
+
+    <!-- Header -->
+    <header class="career-header">
+        <div class="container">
+            <h1>Features</h1>
+            <p class="lead mt-3">Explore the smart and powerful tools that make ArogyaSoft the best in healthcare automation.</p>
+        </div>
+    </header>
 
     <!-- Features Section -->
     <section class="feature-section">

@@ -18,123 +18,413 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-        body {
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #2c3e50;
-            background-color: #f9fafc;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Modern Navbar */
         .navbar {
-            background: #ffffff;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .navbar-brand img {
-            height: 50px;
+            height: 45px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
         }
 
         .nav-link {
-            color: #2c3e50 !important;
+            color: #1a1a1a !important;
             font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: #1abc9c !important;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
         }
 
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section with Gradient Animation */
         .hero {
-            background: linear-gradient(135deg, #2980b9 0%, #6dd5fa 100%);
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
             color: #ffffff;
-            padding: 100px 0;
-            text-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-light {
-            background-color: #ffffff;
-            color: #2980b9;
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Modern Buttons */
+        .btn-modern {
+            background: #ffffff;
+            color: #667eea;
             font-weight: 600;
             border-radius: 50px;
-            padding: 10px 25px;
-            transition: 0.3s;
+            padding: 14px 40px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease 0.4s backwards;
         }
 
-        .btn-light:hover {
-            background-color: #1abc9c;
-            color: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-modern span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+
+        .btn-modern:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
         }
 
         .section-title {
-            margin-bottom: 40px;
-            font-weight: 700;
-            color: #2c3e50;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
             position: relative;
+            display: inline-block;
         }
 
         .section-title::after {
             content: '';
-            display: block;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
             width: 60px;
             height: 4px;
-            background: #1abc9c;
-            margin: 10px auto 0 auto;
+            background: linear-gradient(90deg, #667eea, #764ba2);
             border-radius: 2px;
         }
 
-        .card {
-            border: none;
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #ffffff;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            height: 100%;
         }
 
-        .card:hover {
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .glass-card i {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .glass-card:hover i {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .glass-card h5 {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .glass-card p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Welcome Section with Image */
+        .welcome-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .welcome-img {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+            height: 100%;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transition: transform 0.6s ease;
+        }
+
+        .testimonial-card:hover::before {
+            transform: translate(-25%, -25%);
+        }
+
+        .testimonial-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
-        .card-title {
-            color: #2c3e50;
-            font-weight: 600;
-            margin-top: 15px;
+        .testimonial-card i {
+            font-size: 2.5rem;
+            opacity: 0.3;
+            margin-bottom: 1rem;
         }
 
-        .card-text {
-            color: #7f8c8d;
-            font-size: 0.95rem;
+        .testimonial-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        .footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 30px 0;
+        /* Stats Section */
+        .stats-section {
+            background: #1a1a1a;
+            color: white;
         }
 
-        .footer a {
-            color: #1abc9c;
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Why Choose Section */
+        .why-choose-card {
+            text-align: center;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .why-choose-card i {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .why-choose-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .why-choose-card h5 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Back to Top Button */
         #backToTop {
             position: fixed;
             bottom: 30px;
-            right: 20px;
+            right: 30px;
             display: none;
-            background: #1abc9c;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
-            padding: 12px 16px;
+            padding: 15px 18px;
             border-radius: 50%;
             z-index: 999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         #backToTop:hover {
-            background: #16a085;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
         }
     </style>
 
@@ -144,240 +434,220 @@
     <!-- Navbar -->
     <%@ include file="common-navbar.jsp" %>
 
-
     <!-- Hero Section -->
     <header>
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
-            <ol class="carousel-indicators">
-                <li data-target="#heroCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#heroCarousel" data-slide-to="1"></li>
-                <li data-target="#heroCarousel" data-slide-to="2"></li>
-            </ol>
-
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="hero d-flex align-items-center text-center">
-                        <div class="container">
-                            <h1 class="display-4 font-weight-bold">🚀 Introducing ArogyaSoft</h1>
-                            <p class="lead">Revolutionizing Lab & Patient Management for the Modern Era</p>
-                            <a href="contact.jsp" class="btn btn-light mt-3">Request Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="hero d-flex align-items-center text-center">
-                        <div class="container">
-                            <h1 class="display-4 font-weight-bold">Smart Lab Management</h1>
-                            <p class="lead">Automate test tracking, generate instant reports, and manage billing seamlessly.</p>
-                            <a href="service.jsp" class="btn btn-light mt-3">Explore Features</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="hero d-flex align-items-center text-center">
-                        <div class="container">
-                            <h1 class="display-4 font-weight-bold">Empowering Healthcare</h1>
-                            <p class="lead">Streamline care and boost efficiency with ArogyaSoft.</p>
-                            <a href="about.jsp" class="btn btn-light mt-3">Learn More</a>
-                        </div>
-                    </div>
+        <div class="hero">
+            <div class="container hero-content">
+                <div class="text-center">
+                    <h1>🚀 Transform Your Healthcare Operations</h1>
+                    <p class="lead">Next-generation lab & patient management powered by intelligent automation</p>
+                    <a href="contact.jsp" class="btn-modern"><span>Get Started Free</span></a>
                 </div>
             </div>
-
-            <!-- Carousel Controls -->
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
         </div>
     </header>
 
-    <section class="py-5 bg-light">
-      <div class="container">
-        <div class="row align-items-center">
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="mb-3">
+                        <span class="section-title">Welcome to ArogyaSoft</span>
+                    </div>
+                    <p class="section-subtitle">Empowering healthcare with intelligent technology</p>
+                    <p style="color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem;">
+                        <strong>ArogyaSoft</strong> revolutionizes healthcare management with cutting-edge technology.
+                        Our platform seamlessly integrates <strong>patient registration, lab test management, billing, and reporting</strong>
+                        into one powerful dashboard.
+                    </p>
+                    <p style="color: #4a5568; line-height: 1.8; margin-bottom: 1.5rem;">
+                        Experience the future of healthcare with <strong>cloud-based access, real-time analytics,</strong>
+                        and AI-powered insights designed for modern diagnostic centers.
+                    </p>
+                    <div class="mt-4">
+                        <a href="about.jsp" class="btn btn-outline-dark" style="border-radius: 50px; padding: 10px 30px; font-weight: 600;">Learn More →</a>
+                    </div>
+                </div>
 
-          <!-- Text Section -->
-          <div class="col-md-6">
-            <h2 class="fw-bold mb-4 text-md-start text-center"
-                style="font-weight: 800; font-size: 2 rem; letter-spacing: 0.5px; color: #212529;">
-              Welcome to <span class="text-primary" style="font-weight: 900;">ArogySoft</span>
-            </h2>
-
-            <p class="text-muted text-justify" style="text-align: justify; line-height: 1.8;">
-              <strong>ArogySoft</strong> is an innovative health management software that helps laboratories and healthcare centers simplify their operations with technology.
-              Our platform is designed to automate <strong>patient registration, lab test management, billing, and reporting</strong> — all from a single dashboard.
-            </p>
-            <p class="text-muted text-justify" style="text-align: justify; line-height: 1.8;">
-              Since its inception, ArogySoft has focused on improving efficiency, ensuring data security, and enhancing patient experience with digital healthcare solutions.
-              Labs can easily manage data, generate accurate reports, and offer patients convenient access to their results online.
-            </p>
-            <p class="text-muted text-justify" style="text-align: justify; line-height: 1.8;">
-              With ArogySoft, you can bring your diagnostic center into the digital era with <strong>cloud-based access, real-time reports,</strong> and a user-friendly interface built for healthcare professionals.
-            </p>
-
-          </div>
-
-          <!-- Image Section -->
-          <div class="col-md-6 text-center mt-4 mt-md-0">
-            <img src="https://cdn.pixabay.com/photo/2016/03/31/19/14/doctor-1295581_1280.png"
-                 alt="Doctor using software"
-                 class="img-fluid rounded-4 shadow-sm"
-                 style="max-height: 400px;">
-          </div>
-
+                <div class="col-md-6 text-center">
+                    <img src="https://cdn.pixabay.com/photo/2016/03/31/19/14/doctor-1295581_1280.png"
+                         alt="Doctor using software"
+                         class="img-fluid welcome-img"
+                         style="max-height: 450px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));">
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <p class="stat-label">Active Labs</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">1M+</span>
+                        <p class="stat-label">Tests Processed</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">99.9%</span>
+                        <p class="stat-label">Uptime</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <p class="stat-label">Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Features Section -->
-    <section class="container my-5">
-        <h2 class="text-center section-title">Core Features</h2>
-        <div class="row text-center">
+    <section class="container">
+        <div class="text-center mb-5">
+            <span class="section-title">Core Features</span>
+            <p class="section-subtitle">Everything you need to run a modern diagnostic center</p>
+        </div>
+        <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm rounded">
-                    <div class="card-body">
-                        <i class="fas fa-user-injured fa-3x mb-3 text-primary"></i>
-                        <h5 class="card-title">Patient Record Management</h5>
-                        <p class="card-text">Digitally manage patient details, history, and reports securely.</p>
-                    </div>
+                <div class="glass-card">
+                    <i class="fas fa-user-injured"></i>
+                    <h5>Smart Patient Records</h5>
+                    <p>Intelligent patient management with AI-powered insights and secure cloud storage.</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm rounded">
-                    <div class="card-body">
-                        <i class="fas fa-vial fa-3x mb-3 text-success"></i>
-                        <h5 class="card-title">Lab Test Tracking</h5>
-                        <p class="card-text">Track and automate lab tests, results, and progress in real-time.</p>
-                    </div>
+                <div class="glass-card">
+                    <i class="fas fa-vial"></i>
+                    <h5>Real-Time Test Tracking</h5>
+                    <p>Monitor lab tests with live updates and automated workflow management.</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm rounded">
-                    <div class="card-body">
-                        <i class="fas fa-file-medical fa-3x mb-3 text-warning"></i>
-                        <h5 class="card-title">Instant Report Generation</h5>
-                        <p class="card-text">Generate accurate test and billing reports instantly for patients.</p>
-                    </div>
+                <div class="glass-card">
+                    <i class="fas fa-file-medical"></i>
+                    <h5>Instant Reports</h5>
+                    <p>Generate professional reports instantly with customizable templates.</p>
                 </div>
             </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-wallet"></i>
+                    <h5>Smart Billing</h5>
+                    <p>Automated invoicing with integrated payment gateways and inventory tracking.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h5>Military-Grade Security</h5>
+                    <p>End-to-end encryption with HIPAA-compliant data protection.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h5>Cross-Platform Access</h5>
+                    <p>Seamless experience across all devices with progressive web technology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!-- Additional Features -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm rounded">
-                    <div class="card-body">
-                        <i class="fas fa-wallet fa-3x mb-3 text-info"></i>
-                        <h5 class="card-title">Billing & Inventory</h5>
-                        <p class="card-text">Simplify billing, inventory tracking, and payment management.</p>
+    <!-- Testimonials Section -->
+    <section style="background: #f8f9fa;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-title">Loved by Healthcare Professionals</span>
+                <p class="section-subtitle">See what our clients have to say</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Game-changer for our lab! Reports are lightning-fast and our patients love the digital experience."</p>
+                        <h6 class="font-weight-bold mb-1">Dr. Meena Sharma</h6>
+                        <small style="opacity: 0.8;">City Diagnostic Center</small>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm rounded">
-                    <div class="card-body">
-                        <i class="fas fa-shield-alt fa-3x mb-3 text-danger"></i>
-                        <h5 class="card-title">Data Security</h5>
-                        <p class="card-text">Ensure secure, compliant handling of sensitive medical data.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Efficiency increased by 300%! The automation features are absolutely incredible for our workflow."</p>
+                        <h6 class="font-weight-bold mb-1">Dr. Rajesh Kumar</h6>
+                        <small style="opacity: 0.8;">HealthPlus Labs</small>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm rounded">
-                    <div class="card-body">
-                        <i class="fas fa-mobile-alt fa-3x mb-3 text-secondary"></i>
-                        <h5 class="card-title">Multi-Device Access</h5>
-                        <p class="card-text">Access your dashboard from mobile, tablet, or desktop devices.</p>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"The mobile access is perfect! I can manage everything on-the-go with complete peace of mind."</p>
+                        <h6 class="font-weight-bold mb-1">Dr. Neha Patel</h6>
+                        <small style="opacity: 0.8;">MedCare Diagnostics</small>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5" style="background-color: #f9fafc;">
-        <div class="container text-center">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div class="row mt-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 text-white shadow-lg"
-                         style="background: linear-gradient(135deg, #6dd5fa, #2980b9); border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <i class="fas fa-quote-left fa-2x mb-3"></i>
-                            <p>"ArogyaSoft has transformed the way we manage lab operations. Reports are instant and accurate!"</p>
-                            <h6 class="mt-3 font-weight-bold">Dr. Meena Sharma</h6>
-                            <small>City Diagnostic Center</small>
-                        </div>
-                    </div>
+    <!-- Why Choose Section -->
+    <section class="container">
+        <div class="text-center mb-5">
+            <span class="section-title">Why Choose ArogyaSoft?</span>
+            <p class="section-subtitle">Built for the modern healthcare landscape</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="why-choose-card">
+                    <i class="fas fa-rocket"></i>
+                    <h5>Lightning Fast</h5>
+                    <p>Optimized performance with sub-second response times for all operations.</p>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 text-white shadow-lg"
-                         style="background: linear-gradient(135deg, #00c6ff, #0072ff); border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <i class="fas fa-quote-left fa-2x mb-3"></i>
-                            <p>"Our billing and patient tracking became 3x faster. Highly recommended for any healthcare setup."</p>
-                            <h6 class="mt-3 font-weight-bold">Dr. Rajesh Kumar</h6>
-                            <small>HealthPlus Labs</small>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="why-choose-card">
+                    <i class="fas fa-lock"></i>
+                    <h5>Fort Knox Security</h5>
+                    <p>Bank-level encryption protecting your sensitive medical data 24/7.</p>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card border-0 text-white shadow-lg"
-                         style="background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 20px;">
-                        <div class="card-body p-4">
-                            <i class="fas fa-quote-left fa-2x mb-3"></i>
-                            <p>"The best part is data security and cloud access — I can manage everything from my mobile!"</p>
-                            <h6 class="mt-3 font-weight-bold">Dr. Neha Patel</h6>
-                            <small>MedCare Diagnostics</small>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="why-choose-card">
+                    <i class="fas fa-headset"></i>
+                    <h5>Always Here</h5>
+                    <p>Round-the-clock expert support ensuring your operations never stop.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center section-title">Why Choose ArogyaSoft?</h2>
-        <div class="row mt-4">
-          <div class="col-md-4 text-center mb-4">
-            <i class="fas fa-clock fa-3x text-primary mb-3"></i>
-            <h5>Faster Operations</h5>
-            <p>Automate daily tasks and save time for both patients and staff.</p>
-          </div>
-          <div class="col-md-4 text-center mb-4">
-            <i class="fas fa-lock fa-3x text-success mb-3"></i>
-            <h5>Secure Data</h5>
-            <p>We prioritize patient privacy with encrypted storage and access control.</p>
-          </div>
-          <div class="col-md-4 text-center mb-4">
-            <i class="fas fa-headset fa-3x text-warning mb-3"></i>
-            <h5>24/7 Support</h5>
-            <p>Our technical team ensures smooth and continuous operation of your lab.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- About Section -->
-    <section class="bg-light py-5">
-        <div class="container text-center">
-            <h2 class="section-title">About ArogyaSoft</h2>
-            <p class="lead">ArogyaSoft is an innovative healthcare software designed to streamline lab and patient management. Our mission is to empower clinics, hospitals, and diagnostic centers with smart, efficient, and secure digital tools — improving patient experience and operational excellence.</p>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <div class="text-center">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Ready to Transform Your Lab?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Join hundreds of healthcare providers already using ArogyaSoft</p>
+                <a href="contact.jsp" class="btn-modern"><span>Start Free Trial</span></a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <%@ include file="common-footer.jsp" %>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
