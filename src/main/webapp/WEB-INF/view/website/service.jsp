@@ -18,160 +18,279 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9fafc;
-            color: #2c3e50;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Navbar */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Modern Navbar */
         .navbar {
-            background: #ffffff;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .navbar-brand img {
-            height: 50px;
+            height: 45px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
         }
 
         .nav-link {
-            color: #2c3e50 !important;
+            color: #1a1a1a !important;
             font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
             transition: color 0.3s ease;
         }
 
-        .nav-link:hover {
-            color: #1abc9c !important;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
         }
 
-        /* Header Section */
-        .career-header {
-            background: linear-gradient(135deg, #1abc9c, #16a085);
-            color: #fff;
-            padding: 100px 0 80px;
-            text-align: center;
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #ffffff;
+            padding: 120px 0 100px;
             position: relative;
             overflow: hidden;
         }
 
-        .career-header::after {
-            content: "";
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(22, 160, 133, 0.2);
-            animation: gradientMove 6s ease-in-out infinite alternate;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
         }
 
-        @keyframes gradientMove {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.6; }
-        }
-
-        .career-header h1 {
-            font-weight: 700;
-            font-size: 2.8rem;
+        .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
 
-        .career-header p {
-            font-size: 1.1rem;
-            margin-top: 15px;
-            color: #ecf0f1;
-            position: relative;
-            z-index: 2;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            line-height: 1.2;
         }
 
-        /* Section Title */
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
         .section-title {
-            font-weight: 700;
-            margin-bottom: 40px;
-            color: #2c3e50;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
             position: relative;
-            text-transform: uppercase;
+            display: inline-block;
         }
 
         .section-title::after {
             content: '';
-            width: 70px;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
             height: 4px;
-            background-color: #1abc9c;
-            display: block;
-            margin: 10px auto 0;
+            background: linear-gradient(90deg, #667eea, #764ba2);
             border-radius: 2px;
         }
 
-        /* Feature Section */
-        .feature-section {
-            background: linear-gradient(135deg, #f8fbff, #ecf9f6);
-            padding: 80px 0;
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
         }
 
-        /* Feature Cards */
-        .feature-card {
-            background: #fff;
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 20px;
+            padding: 2.5rem;
             transition: all 0.4s ease;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            background: rgba(255, 255, 255, 0.9);
         }
 
-        .feature-icon {
+        .glass-card i {
             font-size: 3rem;
-            margin-bottom: 15px;
-            transition: color 0.3s ease, transform 0.3s ease;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: transform 0.5s ease;
         }
 
-        .feature-card:hover .feature-icon {
-            transform: scale(1.2);
-            color: #1abc9c;
+        .glass-card:hover i {
+            transform: scale(1.15) rotate(5deg);
         }
 
-        .feature-card h5 {
-            font-weight: 600;
-            margin-bottom: 10px;
+        .glass-card h5 {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
         }
 
-        .feature-card p {
-            color: #7f8c8d;
-            font-size: 0.95rem;
+        .glass-card p {
+            color: #666;
             line-height: 1.6;
+            margin: 0;
         }
 
-        /* Footer */
-        .footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 30px 0;
-            text-align: center;
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .footer a {
-            color: #1abc9c;
-            transition: color 0.3s ease;
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-modern {
+            background: #ffffff;
+            color: #667eea;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 14px 40px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-modern::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-modern span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+        }
+
+        .btn-modern:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .career-header {
-                padding: 70px 0;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            .career-header h1 {
-                font-size: 2.2rem;
+            .section-title {
+                font-size: 2rem;
             }
         }
     </style>
@@ -181,98 +300,108 @@
     <!-- Navbar -->
     <%@ include file="common-navbar.jsp" %>
 
-    <!-- Header -->
-    <header class="career-header">
-        <div class="container">
-            <h1>Features</h1>
-            <p class="lead mt-3">Explore the smart and powerful tools that make ArogyaSoft the best in healthcare automation.</p>
+    <!-- Hero Section -->
+    <header>
+        <div class="hero">
+            <div class="container hero-content">
+                <div class="text-center">
+                    <h1>⚡ Powerful Features</h1>
+                    <p class="lead">Discover cutting-edge tools that transform healthcare automation</p>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Features Section -->
-    <section class="feature-section">
-        <div class="container">
-            <h2 class="section-title text-center">Powerful Features</h2>
-            <div class="row mt-5">
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-user-injured feature-icon text-primary"></i>
-                        <h5>Patient Record Management</h5>
-                        <p>Maintain comprehensive and secure patient histories, test details, and medical reports in one place.</p>
-                    </div>
+    <section class="container">
+        <div class="text-center mb-5">
+            <span class="section-title">Complete Healthcare Solution</span>
+            <p class="section-subtitle">Everything you need to run a modern diagnostic center</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-user-injured"></i>
+                    <h5>Patient Record Management</h5>
+                    <p>Maintain comprehensive and secure patient histories, test details, and medical reports in one intelligent platform.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-vials feature-icon text-success"></i>
-                        <h5>Automated Lab Test Tracking</h5>
-                        <p>Monitor and manage ongoing tests efficiently with automatic updates and report generation.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-vial"></i>
+                    <h5>Automated Lab Test Tracking</h5>
+                    <p>Monitor and manage ongoing tests with real-time updates and intelligent report generation.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-file-medical feature-icon text-warning"></i>
-                        <h5>Instant Report Generation</h5>
-                        <p>Generate and share reports instantly with patients through secure digital links.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-file-medical"></i>
+                    <h5>Instant Report Generation</h5>
+                    <p>Generate professional reports instantly with customizable templates and secure digital sharing.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-wallet feature-icon text-info"></i>
-                        <h5>Billing & Accounting</h5>
-                        <p>Automate invoices, payments, and track outstanding bills — saving time and reducing manual errors.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-wallet"></i>
+                    <h5>Smart Billing & Accounting</h5>
+                    <p>Automated invoicing with integrated payment gateways and comprehensive financial analytics.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-cloud feature-icon text-secondary"></i>
-                        <h5>Cloud Storage & Backup</h5>
-                        <p>Store all your data safely on the cloud with daily backups ensuring zero data loss.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-cloud"></i>
+                    <h5>Cloud Storage & Backup</h5>
+                    <p>Enterprise-grade cloud infrastructure with automated backups ensuring zero data loss.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-mobile-alt feature-icon text-danger"></i>
-                        <h5>Multi-Device Access</h5>
-                        <p>Access your lab dashboard from mobile, tablet, or desktop — anytime, anywhere.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h5>Multi-Device Access</h5>
+                    <p>Seamless experience across mobile, tablet, and desktop with responsive design.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-envelope-open-text feature-icon text-primary"></i>
-                        <h5>Email & SMS Alerts</h5>
-                        <p>Send automated alerts to patients and staff about reports, appointments, and billing.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h5>Smart Notifications</h5>
+                    <p>Automated email and SMS alerts with customizable templates for reports and appointments.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-shield-alt feature-icon text-success"></i>
-                        <h5>Advanced Data Security</h5>
-                        <p>Protect sensitive health data with encrypted storage and secure role-based access control.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h5>Advanced Data Security</h5>
+                    <p>Military-grade encryption with role-based access control and HIPAA compliance.</p>
                 </div>
-
-                <div class="col-md-4 mb-4 d-flex">
-                    <div class="feature-card text-center p-4 w-100">
-                        <i class="fas fa-headset feature-icon text-warning"></i>
-                        <h5>24/7 Expert Support</h5>
-                        <p>Our team is available round-the-clock to ensure your lab runs smoothly and efficiently.</p>
-                    </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="glass-card">
+                    <i class="fas fa-headset"></i>
+                    <h5>24/7 Expert Support</h5>
+                    <p>Round-the-clock dedicated support team ensuring uninterrupted lab operations.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <div class="text-center">
+                <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Ready to Transform Your Lab?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Join hundreds of healthcare providers already using ArogyaSoft</p>
+                <a href="contact.jsp" class="btn-modern"><span>Start Free Trial</span></a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <%@ include file="common-footer.jsp" %>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

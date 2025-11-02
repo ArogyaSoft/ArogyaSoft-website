@@ -394,28 +394,6 @@
             z-index: 1;
         }
 
-        /* Back to Top Button */
-        #backToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: none;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 15px 18px;
-            border-radius: 50%;
-            z-index: 999;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        #backToTop:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -648,7 +626,6 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
 
 </body>
 </html>
