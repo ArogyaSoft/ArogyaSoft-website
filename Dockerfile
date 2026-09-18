@@ -15,4 +15,4 @@ COPY --from=build /app/target/*.war app.war
 
 EXPOSE 10000
 
-ENTRYPOINT ["sh", "-c", "exec java -jar app.war --server.port=${PORT:-10000} --server.address=0.0.0.0"]
+CMD ["sh", "-c", "java -jar app.war --server.port=${PORT:-10000} --server.address=0.0.0.0"]
