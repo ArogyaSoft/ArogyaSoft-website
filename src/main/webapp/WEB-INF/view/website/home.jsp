@@ -419,7 +419,7 @@
                 <div class="text-center">
                     <h1>🚀 Transform Your Healthcare Operations</h1>
                     <p class="lead">Next-generation lab & patient management powered by intelligent automation</p>
-                    <a href="contact.jsp" class="btn-modern"><span>Get Started Free</span></a>
+                    <a href="contact" class="btn-modern"><span>Get Started Free</span></a>
                 </div>
             </div>
         </div>
